@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    :root { --bg: #050508; --sidebar: #0f0f14; --accent: #9d4edd; --text: #e2e8f0; --muted: #94a3b8; }
+    body { margin: 0; display: flex; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; }
+    input { display: none; }
+    
+    .sidebar { width: 320px; background: var(--sidebar); padding: 50px; display: flex; flex-direction: column; border-right: 1px solid #2d2d3a; }
+    .nav-link { margin-bottom: 25px; color: var(--muted); cursor: pointer; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; transition: 0.3s; font-weight: 600; }
+    .nav-link:hover { color: var(--accent); }
+    
+    .main { flex: 1; overflow-y: auto; padding: 60px; }
+    .tab-content { display: none; animation: fadeIn 0.6s ease-out; }
+    
+    /* Reveal logic for the new tab */
+    #tab0:checked ~ .main #content0, #tab1:checked ~ .main #content1, #tab2:checked ~ .main #content2,
+    #tab3:checked ~ .main #content3, #tab4:checked ~ .main #content4, #tab5:checked ~ .main #content5, 
+    #tab6:checked ~ .main #content6 { display: block; }
+
+    .card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); margin-bottom: 30px; }
+    .game-container { margin-top: 20px; border-radius: 15px; overflow: hidden; border: 2px solid var(--accent); background: #000; }
+    
+    h2 { color: var(--accent); font-size: 36px; margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+    h3 { color: #fff; font-size: 22px; margin-top: 0; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<input type="radio" name="tabs" id="tab0" checked>
+<input type="radio" name="tabs" id="tab1">
+<input type="radio" name="tabs" id="tab2">
+<input type="radio" name="tabs" id="tab3">
+<input type="radio" name="tabs" id="tab4">
+<input type="radio" name="tabs" id="tab5">
+<input type="radio" name="tabs" id="tab6">
+
+<div class="sidebar">
+    <h2 style="color:var(--accent); font-size: 18px; margin-bottom: 60px;">ANGELINE TRAYFALGAR</h2>
+    <label for="tab0" class="nav-link">About Me</label>
+    <label for="tab1" class="nav-link">Interactive Portal</label>
+    <label for="tab2" class="nav-link">AI Training & Eval</label>
+    <label for="tab3" class="nav-link">Edu & Strategy</label>
+    <label for="tab4" class="nav-link">Digital Learning</label>
+    <label for="tab5" class="nav-link">Knowledge Assets</label>
+    <label for="tab6" class="nav-link">Interactive Games</label>
+    <a href="mailto:angeline.trayfalgar@gmail.com" class="nav-link" style="margin-top:auto; color:white;">CONTACT ME</a>
+</div>
+
+<div class="main">
+    <div id="content0" class="tab-content">
+        <h2>About Me</h2>
+        <div class="card">
+            <h3 style="color:var(--accent)">Training Content Designer | Instructional Designer | AI Learning Specialist | Digital Learning Solutions Developer</h3>
+            <p style="font-size: 18px; color: #fff;"><strong>Professional Summary</strong></p>
+            <p>Licensed Professional Teacher and Training Content Designer with over 10 years of experience spanning education, instructional design, content development, and AI training initiatives.</p>
+            <p>Experienced in designing learner-centered learning experiences, developing scalable training programs, and transforming complex information into engaging instructional materials. Skilled in curriculum development, learning experience design, technical writing, multimedia learning assets, and AI-assisted prototyping.</p>
+            <p>Demonstrated ability to build structured learning systems, facilitate knowledge transfer, and collaborate with cross-functional stakeholders to deliver effective digital learning solutions.</p>
+	    <img src="profile.jpg" alt="Angeline Trayfalgar" 
+     style="width: 250px; height: 250px; border-radius: 20px; object-fit: cover; border: 2px solid var(--accent);">
+        </div>
+    </div>
+
+    <div id="content1" class="tab-content">
+        <h2>Interactive Training Portal Generator</h2>
+        <div class="card">
+            <p><strong>Role:</strong> Concept Creator • Learning Experience Designer • AI-Assisted Developer</p>
+            <p><strong>Overview:</strong> Designed and developed a lightweight, form-driven training portal generator that transforms structured inputs into shareable, web-based learning experiences without requiring a full LMS.</p>
+            <p><strong>Challenge:</strong> Training materials existed across multiple documents, videos, and reference files, making navigation and maintenance inefficient.</p>
+            <p><strong>Solution:</strong> Designed a reusable system that allows content creators to encode course information through structured forms to automatically generate modular HTML portals.</p>
+            <p><strong>Key Deliverables:</strong> Course builder interface, Tabbed learning navigation, Multimedia support, Structured pages, SharePoint deployment workflow, View-only learner model, Video fallback, Reusable templates.</p>
+            <p><strong>Features:</strong> Tab-based navigation, Overview pages, Learning objectives, Step-by-step instructions, Embedded videos, Quiz integration, Responsive HTML.</p>
+            <span class="skills">Instructional Design • Information Architecture • Learning Experience Design • UX Thinking • HTML/CSS Prototyping • Systems Thinking • Problem Solving • Digital Learning Solutions</span>
+        </div>
+    </div>
+    
+    <div id="content2" class="tab-content">
+        <h2>AI Training & Evaluation</h2>
+        <div class="card"><h3>AI/LLM Training Course Development</h3>
+            <p>Designed and developed 20+ practice courses and learning activities supporting AI/LLM evaluation. Simplified complex concepts for consistent framework application.</p>
+            <p><strong>Deliverables:</strong> Practice courses, Modules, Activities, Evaluation exercises, Knowledge checks, Reference materials.</p>
+            <span class="skills">Adult Learning Theory • Curriculum Development • Assessment Design • Technical Writing • Learning Experience Design</span>
+        </div>
+        <div class="card"><h3>AI Annotation Onboarding Program</h3>
+            <p>Designed onboarding experiences that introduced new evaluators to workflows, standards, and evaluation expectations through structured and scalable learning materials.</p>
+            <p><strong>Deliverables:</strong> Onboarding modules, SOP documentation, Process guides, Learning pathways, Step-by-step instructions, Knowledge resources.</p>
+            <span class="skills">Information Architecture • Instructional Writing • Process Design • Documentation Development • Knowledge Transfer</span>
+        </div>
+        <div class="card"><h3>Calibration & Quality Learning Assets</h3>
+            <p>Created learning resources that supported evaluator alignment, decision consistency, and quality assurance initiatives.</p>
+            <p><strong>Deliverables:</strong> Calibration materials, Evaluation guidelines, Decision frameworks, Reference libraries, Learning aids, Feedback resources.</p>
+            <span class="skills">Knowledge Transfer • Facilitation • Analytical Thinking • Quality Framework Development • Learning Material Design</span>
+        </div>
+    </div>
+
+    <div id="content3" class="tab-content">
+        <h2>Education, Content & Strategy</h2>
+        <div class="card"><h3>Educational Content Development</h3>
+            <p>Designed and developed more than 100 lesson plans and instructional resources across writing, research, and technology-related subjects.</p>
+            <p><strong>Deliverables:</strong> Lesson plans, Learning objectives, Assessments, Activities, Performance tasks, Instructional modules, Student learning materials, Facilitator resources.</p>
+            <span class="skills">Curriculum Design • Assessment Design • Learning Outcomes Development • Instructional Design • Learning Experience Design</span>
+        </div>
+        <div class="card"><h3>Writing & Research Programs</h3>
+            <p>Designed and facilitated research, literacy, and writing initiatives that promoted student engagement and academic excellence.</p>
+            <p><strong>Deliverables:</strong> Research initiatives, Reading programs, Writing workshops, Competition preparation materials, Program documentation, Facilitation resources.</p>
+            <span class="skills">Program Design • Facilitation • Mentoring • Educational Leadership • Stakeholder Coordination</span>
+        </div>
+        <div class="card"><h3>SEO Content Strategy Initiatives</h3>
+            <p>Designed digital content ecosystems that translated complex information into accessible and user-focused experiences.</p>
+            <p><strong>Deliverables:</strong> Blog articles, Content hubs, Landing pages, Topic clusters, Editorial calendars, Information architectures, Content strategies.</p>
+            <span class="skills">SEO • Content Architecture • Information Design • Research Writing • Technical Writing • Content Strategy</span>
+        </div>
+    </div>
+
+    <div id="content4" class="tab-content">
+        <h2>Digital Learning & Technology</h2>
+        <div class="card"><h3>SharePoint Learning Deployment Framework</h3>
+            <p>Designed a workflow for publishing and distributing learning experiences through SharePoint while supporting both internal and external learners.</p>
+            <p><strong>Deliverables:</strong> Publishing workflows, Trainer guidelines, Deployment standards, Learning distribution models, Access frameworks.</p>
+            <span class="skills">Systems Thinking • Workflow Design • Learning Technology • Documentation Design • Process Improvement</span>
+        </div>
+        <div class="card"><h3>HTML Portfolio Website</h3>
+            <p>Designed and developed a responsive portfolio website to showcase projects, learning assets, and digital experiences.</p>
+            <span class="skills">UX Design • HTML/CSS • Information Architecture • Visual Communication • Digital Storytelling</span>
+        </div>
+    </div>
+
+    <div id="content5" class="tab-content">
+        <h2>Knowledge Assets Library</h2>
+        <div class="card">
+            <p><strong>Deliverables:</strong> Standard Operating Procedures (SOPs), Facilitator guides, Job aids, Assessment tools, Rubrics, Knowledge checks, Practice exercises, Evaluation frameworks, Reference documentation.</p>
+            <span class="skills">Technical Writing • Documentation Design • Assessment Design • Knowledge Management • Information Organization</span>
+        </div>
+    </div>
+
+    <div id="content6" class="tab-content">
+        <h2>Interactive Learning Games</h2>
+        
+        <div class="card">
+            <h3>I-Spy: Purple Room</h3>
+            <div class="game-container">
+                <iframe src="https://anjie-lim.github.io/I-Spy-Purple-Room/" width="100%" height="500px" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Sound Detection Game</h3>
+            <div class="game-container">
+                <iframe src="https://anjie-lim.github.io/sound-detection-game/" width="100%" height="500px" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+</div>
+
+</body>
+</html>
